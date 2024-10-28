@@ -1,0 +1,367 @@
+/* Reset margin and padding, and set a default font */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+/* Styling for the banner section */
+.banner {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+	
+}
+
+/* Navbar style */
+.navbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0px;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar items */
+.navbar ul li {
+    display: inline-block;
+    margin-left: 20px;
+    position: relative;
+}
+
+/* Links in the navbar */
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    background-color: rgba(2, 137, 209, 0.0); /* Set a transparent background */
+    border-radius: 5px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Adding the line effect on hover */
+.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: rgb(23, 23, 231);
+    left: 0;
+    bottom: 0;
+    transition: width 0.4s ease-in-out;
+}
+
+/* When hovered, the line moves from left to right */
+.navbar ul li a:hover::after {
+    width: 100%; /* The line fills the width of the link */
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: rgba(241, 241, 241, 0); /* Solid background for dropdown */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Dropdown options */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Dropdown hover effects */
+.dropdown-content a:hover {
+    background-color: rgba(221, 221, 221, 0); /* Solid hover background */
+}
+
+/* Dropdown button hover effect */
+.dropdown:hover .dropbtn {
+    background-color: rgba(2, 109, 158, 0.0); /* Transparent background on hover */
+}
+
+/* Centered content styling */
+.content {
+    width: 100%; /* Set width to 100% */
+    position: absolute; /* Use absolute positioning */
+    top: 50%; /* Position from the top */
+    left: 50%; /* Position from the left */
+    transform: translate(-50%, -50%); /* Center the content */
+    text-align: center; /* Center the text */
+    color: #fff; /* White text color */
+}
+
+/* Span for button background */
+span {
+    background: #009688; /* Fixed spelling mistake (corrected from 'backgrround') */
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    position: absolute;
+    left: 0; /* Start from the left */
+    bottom: 0;
+    z-index: -1; /* Behind the button text */
+    transition: transform 0.5s; /* Smooth animation */
+    transform: translateX(-100%); /* Start off-screen to the left */
+}
+
+button {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden; /* Hide overflow to prevent content spill */
+}
+
+/* Adjust hover effect for button */
+button:hover span {
+    transform: translateX(0); /* Move the span to fill the button on hover */
+}
+
+button:hover {
+    border: none; /* Remove border on hover */
+}
+
+ /* Adding a right arrow in the middle of the button text */
+ .button::after {
+    content: "→"; /* Unicode arrow symbol */
+    font-size: 30px; /* Arrow size */
+}
+
+
+
+/* Add this CSS to your style.css file */
+
+.table-of-contents {
+    position: absolute; /* Absolute positioning */
+    top: 20px; /* Distance from the top */
+    left: 20px; /* Distance from the left */
+    display: flex; /* Use flexbox for horizontal layout */
+}
+
+.hamburger-icon {
+    display: flex;
+    flex-direction: column; /* Stack lines vertically */
+    width: 30px; /* Width of the icon */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.line {
+    height: 3px; /* Thickness of the lines */
+    background-color: white; /* Line color */
+    margin: 3px 0; /* Space between lines */
+    transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+.hamburger-icon:hover .line {
+    background-color: #009688; /* Change color on hover */
+}
+.side-window a {
+    display: block; /* Make options full-width */
+    color: rgb(247, 246, 246);
+    text-decoration: none; /* Remove underline */
+    padding: 10px 0; /* Vertical padding */
+}
+
+.side-window a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Light hover effect */
+}
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style for the header */
+.page-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-image: url('background2.jpg'); /* Apply background image */
+    background-size: cover; /* Make image cover the header area */
+    background-position: center; /* Center the background image */
+    color: #fff; /* Set text color explicitly */
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+
+/* Ensure the header doesn't cover content */
+body {
+    padding-top: 70px; /* adjust based on header height */
+}
+
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style for the header */
+.page-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-image: url('background2.jpg'); /* Apply background image */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Header title */
+.page-header h1 {
+    margin-left: 20px;
+}
+
+/* Navbar styling */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin-right: 20px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+/* Dropdown menu styling */
+.dropdown-content_ {
+    display: none;
+    position: absolute;
+    top: 100%; /* Show below the main link */
+    right: 0;
+    background-color: #333;
+    min-width: 150px;
+}
+
+.dropdown:hover .dropdown-content_ {
+    display: block;
+}
+
+.dropdown-content_ a {
+    color: #fff;
+    padding: 10px;
+    display: block;
+    text-align: left;
+    text-decoration: none;
+}
+
+.dropdown-content_ a:hover {
+    background-color: #555;
+}
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style for the header */
+.page-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-image: url('background2.jpg'); /* Apply background image */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: normal;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Title styling to center it */
+.page-header h1 {
+    flex: 1;
+    text-align: center;
+}
+
+/* Navbar styling */
+.navbar {
+    flex: 1;
+    text-align: right;
+}
+
+.navbar ul {
+    list-style: none;
+    display: inline-flex;
+    gap: 5px;
+    margin-right: 20px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Dropdown menu styling */
+.dropdown-content_ {
+    display: none;
+    position: absolute;
+    top: 100%; /* Show below the main link */
+    right: 0;
+    background-color: #333;
+    min-width: 150px;
+}
+
+.dropdown:hover .dropdown-content_ {
+    display: block;
+}
+
+.dropdown-content_ a {
+    color: #fff;
+    padding: 10px;
+    display: block;
+    text-align: left;
+    text-decoration: none;
+}
+
+.dropdown-content_ a:hover {
+    background-color: #555;
+}

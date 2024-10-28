@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <header class="page-header">
+        <h1>MORPHOMETRIC ANALYSIS</h1>
+        <div class="navbar">
+            <ul>
+                <li><a href="#"></a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSc_iurNIrsiTUy25UOH3hJKYjQaNN0eY5NGYfxzuRYT-FqUeA/viewform?usp=sf_link">Contact</a></li>
+    
+                <li class="dropdown">
+                    <a href="#" class="dropbtn_" onclick="toggleDropdown_()">Student Corner &#9662;</a>
+<div class="dropdown-content_">
+    
+    <a href="https://sites.google.com/view/portfoliobymdjahid7/home" target="_blank">Md Jahid</a>
+    <a href="https://sites.google.com/view/indrajitpaul/home" target="_blank">Indrajit Paul</a>
+    <a href="https://sites.google.com/view/atanusamanta45/home" target="_blank">Atanu Samanta</a>
+</div>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <style>
+        .hamburger-icon {
+            display: flex;
+            flex-direction: column;
+            width: 30px;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+        }
+
+        .line {
+            height: 4px;
+            background-color: white;
+            margin: 3px 0;
+            transition: background-color 0.3s;
+        }
+
+        .hamburger-icon:hover .line {
+            background-color: #009688;
+        }
+
+        /* Navbar styling */
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .navbar ul li {
+            padding: 10px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 16px;
+            display: block;
+        }
+
+        /* Curved button styling for 'Options' */
+        .navbar ul li .options-btn {
+            background-color: #009688;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.2s;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .navbar ul li .options-btn:hover {
+            background-color: #00796B;
+            transform: scale(1.05);
+        }
+
+        .navbar ul li .options-btn:active {
+            background-color: #004D40;
+            transform: scale(1);
+        }
+
+        /* Side navbar styles */
+        .side-navbar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            overflow-x: hidden;
+            transition: 0.5s;
+            
+        }
+
+        .side-navbar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .side-navbar ul li {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .side-navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            display: block;
+        }
+
+        .side-navbar ul li a:hover {
+            background-color: #575757;
+            border-radius: 4px;
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            max-height: 160px; /* Set a max height */
+            overflow-y: auto; /* Enable vertical scrolling */
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 31px; /* Optional: Add some rounding */
+            
+        }
+    /* Hide scrollbar for Webkit browsers */
+.dropdown-content::-webkit-scrollbar {
+    width: 0;
+    background: transparent; /* Optional: makes scrollbar track transparent */
+}
+
+/* Hide scrollbar for Firefox */
+.dropdown-content {
+    scrollbar-width: none;
+}
+
+        .dropdown-content button {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            border: none;
+            background: none;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .dropdown-content button:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Content styling */
+        .content {
+            transition: margin-left 0.5s;
+            margin-top: 0px; /* Adjust this value as needed */
+            padding-top: 10px; /* Optional, adds some space inside the content div */
+        }
+        .content.shifted {
+            margin-left: 250px; /* Adjusts margin when sidebar is open */
+            transition: margin-left 0.5s; /* Smooth transition */
+        }
+
+        .arrow {
+            margin-left: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            display: none; /* Initially hidden */
+            width: 80px;
+        }
+        
+        
+        .content-container {
+            /* Adjust width to fit approximately 25 words */
+            margin: 0 auto;
+            font-size: 1rem; /* Adjust as needed */
+            line-height: 1.6;
+			padding: 20px;
+        }
+        p {
+            text-align: justify;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+           ul>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn_" onclick="toggleDropdown_()">&#9662;</a>
+                    <div class="dropdown-content_" style="display: none;">
+                        <a href="#"></a>
+                        <a href="#"></a>
+                        <a href="#"></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Hamburger Icon -->
+    <div class="hamburger-icon" id="hamburgerIcon" onclick="toggleNavbar()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+    <!-- Side Navbar -->
+    
+    <div class="content">
+	
+	<div id="sideNavbar" class="side-navbar">
+        <ul>
+                <button class="options-btn" onclick="navigateToOptions()">Acknowledgement</button>
+        </ul>
+    </div>
+
+        <h1>OVERVIEW</h1>
+         <div class="content-container">
+        <p>This project presents a comprehensive morphometric analysis of West Bengal, offering a district-wise examination of its diverse topographical and hydrological features. The study explores key parameters that define the physical landscape, including Absolute Relief, which represents the elevation of land above sea level, and Relative Relief, which captures the variation in elevation between the highest and lowest points within each district. These metrics provide a clear understanding of the terrain’s height variation and the nature of its undulations.</p><br>
+    
+        <p>The Topographic Ruggedness Index (TRI) further enhances this understanding by quantifying the degree of ruggedness in the landscape, which helps in identifying areas of complex landforms. Stream Ordering, another significant parameter, classifies streams based on their connectivity within the drainage network, giving insights into the structure and hierarchy of the river systems across the state. Additionally, Stream Frequency measures the number of streams per unit area, shedding light on the density of drainage channels and the hydrological characteristics of the terrain.</p><br>
+        
+        <p>Drainage Density is a crucial indicator in this analysis, reflecting the total length of rivers and streams relative to the area of each district. It highlights how dissected or fragmented the land is, indicating its vulnerability to erosion and its hydrological behavior. Together, these parameters provide a detailed understanding of West Bengal's geomorphology, offering valuable insights for environmental planning, land use management, and academic research.</p>
+    </div>      <div class="button-container">
+            <div class="dropdown">
+                <button class="options-btn" id="districtButton" onclick="toggleDistrictDropdown()">SELECT DISTRICT &#9662;</button>
+                <div id="districtDropdown" class="dropdown-content"></div>
+            </div>
+            <div class="dropdown">
+                <button class="options-btn" id="parameterButton" onclick="toggleParameterDropdown()">PARAMETER &#9662;</button>
+                <div id="parameterDropdown" class="dropdown-content"></div>
+            </div>
+            <button class="Submit" id="arrowButton" onclick="navigateToLink()"> SUBMIT </button>
+        </div>
+    </div>
+
+    <script>
+        // Sample data for dropdowns (replace this with your Excel data)
+        const districts = [
+            { 
+                name: "COOCHBIHAR", 
+                parameters: ["ABSOLUTE RELIEF", "RELATIVE RELIEF", "TOPOGRAPHIC RUGGEDNESS INDEX", "STREAM FREQUENCY", "DRAINAGE DENSITY", "DISECTION INDEX"],
+                links: {
+                   "ABSOLUTE RELIEF": "https://mdjahid07.github.io/COOCH-BEHAR-AR/",
+                    "RELATIVE RELIEF": "https://mdjahid07.github.io/COOCH-BEHAR-RR/",
+                    "TOPOGRAPHIC RUGGEDNESS INDEX": "https://mdjahid07.github.io/COOCH-BEHAR-TRI/",
+                    "STREAM FREQUENCY": "https://mdjahid07.github.io/COOCH-BEHAR-SF/",
+                    "DRAINAGE DENSITY": "https://mdjahid07.github.io/COOCH-BEHAR-DD/",
+                    "DISECTION INDEX": "https://mdjahid07.github.io/COOCH-BEHAR-DI/",
+                    // Add links for other parameters here
+                }
+            },
+            { 
+                name: "KALIMPONG", 
+                parameters: ["ABSOLUTE RELIEF", "RELATIVE RELIEF", "TOPOGRAPHIC RUGGEDNESS INDEX", "STREAM FREQUENCY", "DRAINAGE DENSITY", "DISECTION INDEX"],
+                links: {
+                    "ABSOLUTE RELIEF": "https://mdjahid07.github.io/KALIMPONG-AR/",
+                    "RELATIVE RELIEF": "https://mdjahid07.github.io/KALIMPONG-RR/",
+                    "TOPOGRAPHIC RUGGEDNESS INDEX": "https://mdjahid07.github.io/KALIMPONG-TRI/",
+                    "STREAM FREQUENCY": "https://mdjahid07.github.io/KALIMPONG-SF/",
+                    "DRAINAGE DENSITY": "https://mdjahid07.github.io/KALIMPONG-DD/",
+                    "DISECTION INDEX": "https://mdjahid07.github.io/KALIMPONG-DI/",
+                    // Add links for other parameters here
+                }
+            },
+            { 
+                name: "DARJEELING", 
+                parameters: ["ABSOLUTE RELIEF", "RELATIVE RELIEF", "TOPOGRAPHIC RUGGEDNESS INDEX", "STREAM FREQUENCY", "DRAINAGE DENSITY", "DISECTION INDEX"],
+                links: {
+                  "ABSOLUTE RELIEF": "https://mdjahid07.github.io/DARJEELING-AR/",
+                    "RELATIVE RELIEF": "https://mdjahid07.github.io/DARJEELING-RR/",
+                    "TOPOGRAPHIC RUGGEDNESS INDEX": "https://mdjahid07.github.io/DARJEELING-TRI/",
+                    "STREAM FREQUENCY": "https://mdjahid07.github.io/DARJEELING-SF/",
+                    "DRAINAGE DENSITY": "https://mdjahid07.github.io/DARJEELING-DD/",
+                    "DISECTION INDEX": "https://mdjahid07.github.io/DARJEELING-DI/",
+                    // Add links for other parameters here
+                }
+            },
+            { 
+                name: "JALPAIGURI", 
+                parameters: ["ABSOLUTE RELIEF", "RELATIVE RELIEF", "TOPOGRAPHIC RUGGEDNESS INDEX","STREAM FREQUENCY", "DRAINAGE DENSITY", "DISECTION INDEX"],
+                links: {
+                   "ABSOLUTE RELIEF": "https://mdjahid07.github.io/JALPAIGURI-AR/",
+                    "RELATIVE RELIEF": "https://mdjahid07.github.io/JALPAIGURI-RR/",
+                    "TOPOGRAPHIC RUGGEDNESS INDEX": "https://mdjahid07.github.io/JALPAIGURI-TRI/",
+                    "STREAM FREQUENCY": "https://mdjahid07.github.io/JALPAIGURI-SF/",
+                    "DRAINAGE DENSITY": "https://mdjahid07.github.io/JALPAIGURI-DD/",
+                    "DISECTION INDEX": "https://mdjahid07.github.io/JALPAIGURI-DI/",
+                    // Add links for other parameters here
+                }
+            },
+            { 
+                name: "UTTAR DINAJPUR", 
+                parameters: ["ABSOLUTE RELIEF", "RELATIVE RELIEF", "TOPOGRAPHIC RUGGEDNESS INDEX","STREAM FREQUENCY", "DRAINAGE DENSITY", "DISECTION INDEX"],
+                links: {
+                   "ABSOLUTE RELIEF": "https://mdjahid07.github.io/UTTAR-DINAJPUR-AR/",
+                    "RELATIVE RELIEF": "https://mdjahid07.github.io/UTTAR-DINAJPUR-RR/",
+                    "TOPOGRAPHIC RUGGEDNESS INDEX": "https://mdjahid07.github.io/UTTAR-DINAJPUR-TRI/",
+                    "STREAM FREQUENCY": "https://mdjahid07.github.io/UTTAR-DINAJPUR-SF/",
+                    "DRAINAGE DENSITY": "https://mdjahid07.github.io/UTTAR-DINAJPUR-DD/",
+                    "DISECTION INDEX": "https://mdjahid07.github.io/UTTAR-DINAJPUR-DI/",
+                    // Add links for other parameters here
+                }
+            },
+            { 
+                name: "DAKSHIN DINAJPUR", 
+                parameters: ["ABSOLUTE RELIEF", "RELATIVE RELIEF", "TOPOGRAPHIC RUGGEDNESS INDEX","STREAM FREQUENCY", "DRAINAGE DENSITY", "DISECTION INDEX"],
+                links: {
+                   "ABSOLUTE RELIEF": "https://mdjahid07.github.io/DAKSHIN-DINAJPUR-AR/",
+                    "RELATIVE RELIEF": "https://mdjahid07.github.io/DAKSHIN-DINAJPUR-RR/",
+                    "TOPOGRAPHIC RUGGEDNESS INDEX": "https://mdjahid07.github.io/DAKSHIN-DINAJPUR-TRI/",
+                    "STREAM FREQUENCY": "https://mdjahid07.github.io/DAKSHIN-DINAJPUR-SF/",
+                    "DRAINAGE DENSITY": "https://mdjahid07.github.io/DAKSHIN-DINAJPUR-DD/",
+                    "DISECTION INDEX": "https://mdjahid07.github.io/DAKSHIN-DINAJPUR-DI/",
+                    // Add links for other parameters here
+                }
+            },
+            
+            { 
+                name: "MURSHIDABAD", 
+                parameters: ["ABSOLUTE RELIEF", "RELATIVE RELIEF", "TOPOGRAPHIC RUGGEDNESS INDEX","STREAM FREQUENCY", "DRAINAGE DENSITY", "DISECTION INDEX"],
+                links: {
+                   "ABSOLUTE RELIEF": "https://mdjahid07.github.io/MURSHIDABAD-AR/",
+                    "RELATIVE RELIEF": "https://mdjahid07.github.io/MURSHIDABAD-RR/",
+                    "TOPOGRAPHIC RUGGEDNESS INDEX": "https://mdjahid07.github.io/MURSHIDABAD-TRI/",
+                    "STREAM FREQUENCY": "https://mdjahid07.github.io/MURSHIDABAD-SF/",
+                    "DRAINAGE DENSITY": "https://mdjahid07.github.io/MURSHIDABAD-DD/",
+                    "DISECTION INDEX": "https://mdjahid07.github.io/MURSHIDABAD-DII/",
+                    // Add links for other parameters here
+                }
+            },
+            { 
+                name: "NADIA", 
+                parameters: ["ABSOLUTE RELIEF", "RELATIVE RELIEF", "TOPOGRAPHIC RUGGEDNESS INDEX","STREAM FREQUENCY", "DRAINAGE DENSITY", "DISECTION INDEX"],
+                links: {
+                   "ABSOLUTE RELIEF": "https://mdjahid07.github.io/NADIA-AR/",
+                    "RELATIVE RELIEF": "https://mdjahid07.github.io/NADIA-RR/",
+                    "TOPOGRAPHIC RUGGEDNESS INDEX": "https://mdjahid07.github.io/NADIA-TRI/",
+                    "STREAM FREQUENCY": "https://mdjahid07.github.io/NADIA-SF/",
+                    "DRAINAGE DENSITY": "https://mdjahid07.github.io/NADIA-DD/",
+                    "DISECTION INDEX": "https://mdjahid07.github.io/NADIA-DI/",
+                    // Add links for other parameters here
+                }
+            },
+            { 
+                name: "PASCHIM BARDHAMAN", 
+                parameters: ["ABSOLUTE RELIEF", "RELATIVE RELIEF", "TOPOGRAPHIC RUGGEDNESS INDEX","STREAM FREQUENCY", "DRAINAGE DENSITY", "DISECTION INDEX"],
+                links: {
+                 "ABSOLUTE RELIEF": "https://mdjahid07.github.io/PASCHIM-BARDHAMAN-AR/",
+                    "RELATIVE RELIEF": "https://mdjahid07.github.io/PASCHIM-BARDHAMAN-RR/",
+                    "TOPOGRAPHIC RUGGEDNESS INDEX": "https://mdjahid07.github.io/PASCHIM-BARDHAMAN-TRI/",
+                    "STREAM FREQUENCY": "https://mdjahid07.github.io/PASCHIM-BARDHAMAN-SF/",
+                    "DRAINAGE DENSITY": "https://mdjahid07.github.io/PASCHIM-BARDHAMAN-DD/",
+                    "DISECTION INDEX": "https://mdjahid07.github.io/PASCHIM-BARDHAMAN-DI/",
+                    // Add links for other parameters here
+                }
+            },
+            { 
+                name: "PURBA BARDHAMAN", 
+                parameters: ["ABSOLUTE RELIEF", "RELATIVE RELIEF", "TOPOGRAPHIC RUGGEDNESS INDEX","STREAM FREQUENCY", "DRAINAGE DENSITY", "DISECTION INDEX"],
+                links: {
+                  "ABSOLUTE RELIEF": "https://mdjahid07.github.io/PURBA-BARDHAMAN-AR/",
+                    "RELATIVE RELIEF": "https://mdjahid07.github.io/PURBA-BARDHAMAN-RR/",
+                    "TOPOGRAPHIC RUGGEDNESS INDEX": "https://mdjahid07.github.io/PURBA-BARDHAMAN-TRI/",
+                    "STREAM FREQUENCY": "https://mdjahid07.github.io/PURBA-BARDHAMAN-SF/",
+                    "DRAINAGE DENSITY": "https://mdjahid07.github.io/PURBA-BARDHAMAN-DD/",
+                    "DISECTION INDEX": "https://mdjahid07.github.io/PURBA-BARDHAMAN-DI/",
+                    // Add links for other parameters here
+                }
+            },
+            { 
+                name: "NORTH 24 PARGANAS", 
+                parameters: ["ABSOLUTE RELIEF", "RELATIVE RELIEF", "TOPOGRAPHIC RUGGEDNESS INDEX","STREAM FREQUENCY", "DRAINAGE DENSITY", "DISECTION INDEX"],
+                links: {
+                   "ABSOLUTE RELIEF": "https://mdjahid07.github.io/N-24-PGS-AR/",
+                    "RELATIVE RELIEF": "https://mdjahid07.github.io/N-24-PGS-RR/",
+                    "TOPOGRAPHIC RUGGEDNESS INDEX": "https://mdjahid07.github.io/N-24-PGS-TRI/",
+                    "STREAM FREQUENCY": "https://mdjahid07.github.io/N-24-PGS-SF/",
+                    "DRAINAGE DENSITY": "https://mdjahid07.github.io/N-24-PGS-DD/",
+                    "DISECTION INDEX": "https://mdjahid07.github.io/N-24-PGS-DI/",
+                    // Add links for other parameters here
+                }
+            },
+            { 
+                name: "SOUTH 24 PARGANAS", 
+                parameters: ["ABSOLUTE RELIEF", "RELATIVE RELIEF", "TOPOGRAPHIC RUGGEDNESS INDEX","STREAM FREQUENCY", "DRAINAGE DENSITY", "DISECTION INDEX"],
+                links: {
+                   "ABSOLUTE RELIEF": "",
+                    "RELATIVE RELIEF": "https://mdjahid07.github.io/Alipurduar/#11/26.6289/89.4645",
+                    "TOPOGRAPHIC RUGGEDNESS INDEX": "https://link-for-param2-1.com",
+                    "STREAM ORDERING": "https://link-for-param2-1.com",
+                    "STREAM FREQUENCY": "https://link-for-param2-1.com",
+                    "DRAINAGE DENSITY": "https://link-for-param2-1.com",
+                    "DISECTION INDEX": "https://link-for-param2-1.com",
+                    // Add links for other parameters here
+                }
+            },
+            { 
+                name: "BANKURA", 
+                parameters: ["ABSOLUTE RELIEF", "RELATIVE RELIEF", "TOPOGRAPHIC RUGGEDNESS INDEX","STREAM FREQUENCY", "DRAINAGE DENSITY", "DISECTION INDEX"],
+                links: {
+                   "ABSOLUTE RELIEF": "https://mdjahid07.github.io/Bankura-AR/",
+                    "RELATIVE RELIEF": "https://mdjahid07.github.io/BANKURA-RR/",
+                    "TOPOGRAPHIC RUGGEDNESS INDEX": "https://mdjahid07.github.io/BANKURA-TRI/",
+                    "STREAM FREQUENCY": "https://mdjahid07.github.io/BANKURA-SF/",
+                    "DRAINAGE DENSITY": "https://mdjahid07.github.io/BANKURA-DD/",
+                    "DISECTION INDEX": "https://mdjahid07.github.io/BANKURA-DI/",
+                    // Add links for other parameters here
+                }
+            },
+            { 
+                name: "BIRBHUM", 
+                parameters: ["ABSOLUTE RELIEF", "RELATIVE RELIEF", "TOPOGRAPHIC RUGGEDNESS INDEX","STREAM FREQUENCY", "DRAINAGE DENSITY", "DISECTION INDEX"],
+                links: {
+                   "ABSOLUTE RELIEF": "https://mdjahid07.github.io/BIRBHUM-AR/",
+                    "RELATIVE RELIEF": "https://mdjahid07.github.io/BIRBHUM-RR/",
+                    "TOPOGRAPHIC RUGGEDNESS INDEX": "https://mdjahid07.github.io/BIRBHUM-TRI/",
+                    "STREAM FREQUENCY": "https://mdjahid07.github.io/BIRBHUM-SF/",
+                    "DRAINAGE DENSITY": "https://mdjahid07.github.io/BIRBHUM-DD/",
+                    "DISECTION INDEX": "https://mdjahid07.github.io/BIRBHUM-DI/",
+                    // Add links for other parameters here
+                }
+            },
+            
+            { 
+                name: "PURBA MEDINIPUR", 
+                parameters: ["ABSOLUTE RELIEF", "RELATIVE RELIEF", "TOPOGRAPHIC RUGGEDNESS INDEX","STREAM FREQUENCY", "DRAINAGE DENSITY", "DISECTION INDEX"],
+                links: {
+                    "ABSOLUTE RELIEF": "https://mdjahid07.github.io/PURBA-MEDINIPUR-AR/",
+                    "RELATIVE RELIEF": "https://mdjahid07.github.io/PURBA-MEDINIPUR-RR/",
+                    "TOPOGRAPHIC RUGGEDNESS INDEX": "https://mdjahid07.github.io/PURBA-MEDINIPUR-TRI/",
+                    "STREAM FREQUENCY": "https://mdjahid07.github.io/PURBA-MEDINIPUR-SF/",
+                    "DRAINAGE DENSITY": "https://mdjahid07.github.io/PURBA-MEDINIPUR-DD/",
+                    "DISECTION INDEX": "https://mdjahid07.github.io/PURBA-MEDINIPUR-DI/",
+                    // Add links for other parameters here
+                }
+            },
+            { 
+                name: "PASCHIM MEDINIPUR", 
+                parameters: ["ABSOLUTE RELIEF", "RELATIVE RELIEF", "TOPOGRAPHIC RUGGEDNESS INDEX","STREAM FREQUENCY", "DRAINAGE DENSITY", "DISECTION INDEX"],
+                links: {
+                   "ABSOLUTE RELIEF": "https://mdjahid07.github.io/PASCHIM-MEDINIPUR-AR/",
+                    "RELATIVE RELIEF": "https://mdjahid07.github.io/PASCHIM-MEDINIPUR-RR/",
+                    "TOPOGRAPHIC RUGGEDNESS INDEX": "https://mdjahid07.github.io/PASCHIM-MEDINIPUR-TRI/",
+                    "STREAM FREQUENCY": "https://mdjahid07.github.io/PASCHIM-MEDINIPUR-SF/",
+                    "DRAINAGE DENSITY": "https://mdjahid07.github.io/PASCHIM-MEDINIPUR-DD/",
+                    "DISECTION INDEX": "https://mdjahid07.github.io/PASCHIM-MEDINIPUR-DI/",
+                    // Add links for other parameters here
+                }
+            },
+            { 
+                name: "JHARGRAM", 
+                parameters: ["ABSOLUTE RELIEF", "RELATIVE RELIEF", "TOPOGRAPHIC RUGGEDNESS INDEX","STREAM FREQUENCY", "DRAINAGE DENSITY", "DISECTION INDEX"],
+                links: {
+                    "ABSOLUTE RELIEF": "https://mdjahid07.github.io/JHARGRAM-AR/",
+                    "RELATIVE RELIEF": "https://mdjahid07.github.io/JHARGRAM-RR/",
+                    "TOPOGRAPHIC RUGGEDNESS INDEX": "https://mdjahid07.github.io/JHARGRAM-TRI/",
+                    "STREAM FREQUENCY": "https://mdjahid07.github.io/JHARGRAM-SF/",
+                    "DRAINAGE DENSITY": "https://mdjahid07.github.io/JHARGRAM-DD/",
+                    "DISECTION INDEX": "https://mdjahid07.github.io/JHARGRAM-DI/",
+                    // Add links for other parameters here
+                }
+            },
+            { 
+                name: "PURULIA", 
+                parameters: ["ABSOLUTE RELIEF", "RELATIVE RELIEF", "TOPOGRAPHIC RUGGEDNESS INDEX","STREAM FREQUENCY", "DRAINAGE DENSITY", "DISECTION INDEX"],
+                links: {
+                   "ABSOLUTE RELIEF": "https://mdjahid07.github.io/PURULIA-AR/",
+                    "RELATIVE RELIEF": "https://mdjahid07.github.io/PURULIA-RR1/",
+                    "TOPOGRAPHIC RUGGEDNESS INDEX": "https://mdjahid07.github.io/PURULIA-TRI/",
+                    "STREAM FREQUENCY": "https://mdjahid07.github.io/PURULIA-SF",
+                    "DRAINAGE DENSITY": "https://mdjahid07.github.io/PURULIA-DD/",
+                    "DISECTION INDEX": "https://mdjahid07.github.io/PURULIA-DI/",
+                    // Add links for other parameters here
+                }
+            },
+            { 
+                name: "ALIPURDUAR", 
+                parameters: ["ABSOLUTE RELIEF", "RELATIVE RELIEF", "TOPOGRAPHIC RUGGEDNESS INDEX","STREAM FREQUENCY", "DRAINAGE DENSITY", "DISECTION INDEX"],
+                links: {
+                    "ABSOLUTE RELIEF": "https://mdjahid07.github.io/Alipurduar-AR/",
+                    "RELATIVE RELIEF": "https://mdjahid07.github.io/Alipurduar-RR/",
+                    "TOPOGRAPHIC RUGGEDNESS INDEX": "https://mdjahid07.github.io/Alipurduar-TRI/",
+                    "STREAM FREQUENCY": "https://mdjahid07.github.io/Alipurduar-SF/",
+                    "DRAINAGE DENSITY": "https://mdjahid07.github.io/Alipurduar-DD/",
+                    "DISECTION INDEX": "https://mdjahid07.github.io/Alipurduar-DI/",
+                    // Add links for other parameters here
+                }
+            },
+            { 
+                name: "HOWRAH", 
+                parameters: ["ABSOLUTE RELIEF", "RELATIVE RELIEF", "TOPOGRAPHIC RUGGEDNESS INDEX","STREAM FREQUENCY", "DRAINAGE DENSITY", "DISECTION INDEX"],
+                links: {
+                   "ABSOLUTE RELIEF": "https://mdjahid07.github.io/HOWRAH-AR/",
+                    "RELATIVE RELIEF": "https://mdjahid07.github.io/HOWRAH-RR/",
+                    "TOPOGRAPHIC RUGGEDNESS INDEX": "https://mdjahid07.github.io/HOWRAH-TRI/",
+                    "STREAM FREQUENCY": "https://mdjahid07.github.io/HOWRAH-SF/",
+                    "DRAINAGE DENSITY": "https://mdjahid07.github.io/HOWRAH-DD/",
+                    "DISECTION INDEX": "https://mdjahid07.github.io/HOWRAH-DI/",
+                    // Add links for other parameters here
+                }
+            },
+            { 
+                name: "HOOGHLY", 
+                parameters: ["ABSOLUTE RELIEF", "RELATIVE RELIEF", "TOPOGRAPHIC RUGGEDNESS INDEX", "STREAM ORDERING", "STREAM FREQUENCY", "DRAINAGE DENSITY", "DISECTION INDEX"],
+                links: {
+                   "ABSOLUTE RELIEF": "https://mdjahid07.github.io/HOOGHLY-AR/",
+                    "RELATIVE RELIEF": "https://mdjahid07.github.io/HOOGHLY-RR/",
+                    "TOPOGRAPHIC RUGGEDNESS INDEX": "https://mdjahid07.github.io/HOOGHLY-TRI/",
+                    "STREAM FREQUENCY": "https://mdjahid07.github.io/HOOGHLY-SF/",
+                    "DRAINAGE DENSITY": "https://mdjahid07.github.io/HOOGHLY-DD/",
+                    "DISECTION INDEX": "https://mdjahid07.github.io/HOOGHLY-DI/",
+                    // Add links for other parameters here
+                }
+            },
+            { 
+                name: "KOLKATA", 
+                parameters: ["ABSOLUTE RELIEF", "RELATIVE RELIEF", "TOPOGRAPHIC RUGGEDNESS INDEX", "STREAM ORDERING", "STREAM FREQUENCY", "DRAINAGE DENSITY", "DISECTION INDEX"],
+                links: {
+                   "ABSOLUTE RELIEF": "https://mdjahid07.github.io/KOLKATA-AR/",
+                    "RELATIVE RELIEF": "https://mdjahid07.github.io/KOLKATA-RR/",
+                    "TOPOGRAPHIC RUGGEDNESS INDEX": "https://mdjahid07.github.io/KOLKATA-TRI/",
+                    "STREAM FREQUENCY": "https://mdjahid07.github.io/KOLKATA-SF/",
+                    "DRAINAGE DENSITY": "https://mdjahid07.github.io/KOLKATA-DD/",
+                    "DISECTION INDEX": "https://mdjahid07.github.io/KOLKATA-DI/",
+                    // Add links for other parameters here
+                }
+            },
+            
+
+            // Add more districts here...
+        ];
+
+        let selectedLink = null;
+
+        function populateDistrictDropdown() {
+            const dropdown = document.getElementById("districtDropdown");
+            dropdown.innerHTML = ""; // Clear previous content
+            districts.forEach(district => {
+                const button = document.createElement("button");
+                button.textContent = district.name;
+                button.onclick = () => selectDistrict(district.name, district.parameters, district.links);
+                dropdown.appendChild(button);
+            });
+        }
+
+        function selectDistrict(districtName, parameters, links) {
+            document.getElementById("districtButton").textContent = districtName;
+            populateParameterDropdown(parameters, links);
+            document.getElementById("districtDropdown").style.display = "none";
+        }
+
+        function populateParameterDropdown(parameters, links) {
+            const dropdown = document.getElementById("parameterDropdown");
+            dropdown.innerHTML = ""; // Clear previous content
+            parameters.forEach(param => {
+                const button = document.createElement("button");
+                button.textContent = param;
+                button.onclick = () => selectParameter(param, links[param]);
+                dropdown.appendChild(button);
+            });
+        }
+
+        function selectParameter(paramName, link) {
+            document.getElementById("parameterButton").textContent = paramName;
+            selectedLink = link;
+            document.getElementById("arrowButton").style.display = "inline-block";
+            document.getElementById("parameterDropdown").style.display = "none";
+        }
+
+        function toggleDistrictDropdown() {
+            const dropdown = document.getElementById("districtDropdown");
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        }
+
+        function toggleParameterDropdown() {
+            const dropdown = document.getElementById("parameterDropdown");
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        }
+
+        function navigateToLink() {
+            if (selectedLink) {
+                window.open(selectedLink, "_blank");
+            }
+        }
+
+        // Side navbar toggle function
+           // Update the toggleNavbar function to shift content
+    function toggleNavbar() {
+        const navbar = document.getElementById("sideNavbar");
+        const content = document.querySelector(".content");
+
+        if (navbar.style.width === "250px") {
+            navbar.style.width = "0";
+            content.classList.remove("shifted"); // Remove shifted class when navbar closes
+        } else {
+            navbar.style.width = "250px";
+             // Add shifted class when navbar opens
+        }
+    }
+
+        // Navigation function for 'Options' button
+        function navigateToOptions() {
+            alert("Options button clicked!");
+        }
+        function navigateToOptions() {
+            window.location.href = "options.html"; // Redirect to a new page
+        }
+
+        // Initialize the district dropdown on page load
+        window.onload = function() {
+            populateDistrictDropdown();
+        }
+        function toggleDropdown_() {
+            var dropdownContent = document.querySelector(".dropdown-content_");
+            dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn_')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content_");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.style.display === "block") {
+                        openDropdown.style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
